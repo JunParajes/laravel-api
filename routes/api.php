@@ -9,6 +9,12 @@ Route::get('/test', function () {
     ]);
 });
 
+Route::get('/random', function() {
+    return response()->json([
+        'number' => rand(1,100)
+    ]);
+});
+
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
